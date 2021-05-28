@@ -1,0 +1,80 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+body{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.top-container{
+    background-image: url("../images/coverphoto1.png");
+    background-size: 100%, 100%;   
+    background-position: 0px -40px;
+    background-repeat: no-repeat;
+    height: 810px;
+}
+.logo{
+    width: 10%;
+    position: relative;
+    top: 10px;
+    margin-top:10px;
+    margin-left: 30px;
+}
+.heading{
+    display: inline-block;
+    position: absolute;
+    clear: left;
+    top: 250px;
+    left: 30px;
+    bottom: 200px;
+}
+.intro{
+    font-family: "Poppins", "sans-serif";
+    font-weight: 700;
+    font-size: 90px;
+    margin-bottom:0 ;
+    margin-top: 0;  
+}
+#i1{
+    color: purple;
+}
+.subheading{
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 1.8rem;
+    width: 600px;
+}
+.categories{
+    background-color: yellow;
+    height:200px;
+}
+.slideshow{
+    background-color: red;
+    height:200px;
+
+}
+.feature1{
+    background-color: blue;
+    height:200px;
+
+}
+.feature2{
+    background-color: pink;
+    height:200px;
+
+}
+.footer{
+    background-color: black;
+    height:200px;
+
+}
