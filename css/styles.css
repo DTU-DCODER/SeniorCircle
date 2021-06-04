@@ -19,7 +19,7 @@ body{
 .top-container{
     background-image: url("../images/coverphoto1.png");
     background-size: 100%, 100%;   
-    background-position: 0px -40px;
+    background-position: 0px -90px;
     background-repeat: no-repeat;
     height: 810px;
 }
@@ -44,6 +44,9 @@ body{
     font-size: 90px;
     margin-bottom:0 ;
     margin-top: 0;  
+}
+#i0{
+    font-size: 3.2rem;
 }
 #i1{
     color: purple;
