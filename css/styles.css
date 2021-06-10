@@ -29,6 +29,7 @@ body{
     justify-content: flex-start;
     align-items: flex-start;
     gap: 7%;
+    margin-right: -11px;
 }
 .cover-image{
     /* display: inline-block; */
@@ -99,15 +100,16 @@ body{
   text-decoration: none;
 }
 .categories{
-    background-color: yellow;
+    background-color: #090809;
     height:200px;
+    margin-right: -11px;
 }
 .slideshow{
     background-color: red;
     height:200px;
-
+    margin-right: -11px;
 }
-.feature1{
+/* .feature1{
     background-color: blue;
     height:200px;
 
@@ -116,11 +118,11 @@ body{
     background-color: pink;
     height:200px;
 
-}
+} */
 .footer{
     background-color: black;
     height:200px;
-
+    margin-right: -11px;
 }
 @media only screen and (max-width: 800px){
     .top-container{
