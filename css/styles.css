@@ -4,7 +4,7 @@
 ::-webkit-scrollbar-thumb {
     background: #888;
 }
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track{
     box-shadow: inset 0 0 5px grey; 
     border-radius: 10px;
 }
@@ -22,7 +22,6 @@ body{
     background-size: 100%, 100%;   
     background-size: cover;
     background-position: 0px -90px;
-    /* background-attachment: fixed; */
     background-repeat: no-repeat;
     height: 590px;
     flex-direction: column;
@@ -30,9 +29,9 @@ body{
     align-items: flex-start;
     gap: 7%;
     margin-right: -11px;
+    /* padding-top:10px; */
 }
 .cover-image{
-    /* display: inline-block; */
     position: absolute;
     object-fit:contain;
 }
@@ -51,18 +50,6 @@ body{
     left: 30px;
     bottom: 200px;
 }
-
-@media screen and (max-width: 600px) {
-    .heading .intro{
-      width: 400px;
-      font-size: 60px;
-    }
-    .heading .subheading{
-        font-size: 30px;
-        width:400px;
-    }
-  }
-
 .intro{
     font-family: "Poppins", "sans-serif";
     font-weight: 700;
@@ -72,7 +59,7 @@ body{
     color: rgb(34, 56, 68);
 }
 .topad{
-    padding-top: 170px;
+    padding-top: 150px;
 }
 #i0{
     font-size: 3.2rem;
@@ -94,7 +81,6 @@ body{
   font-family: Arial;
   font-size: 20px;
   padding-top: 200px;
-  background-color: red;
   margin-top: -10px;
   margin-left: -10px;
 }
@@ -103,10 +89,12 @@ body{
     font-family: Arial;
     font-size: 20px;
     padding: 10px ;
-    background-color: red;
     margin-top: -10px;
-    margin-left:-70px;
-  }
+    margin-left:-80px;
+  }   
+.btn:hover{
+    background-color: yellow;
+}
 .animated {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -387,11 +375,6 @@ body{
     transform:translateZ(0)!important;
     -webkit-transform:translateZ(0)!important;
     opacity:1!important}
-.btn-primary:hover{
-  background: #8a5fe6;
-  text-decoration: none;
-}
-
 .categories{
     background-color: #090809;
     height:200px;
@@ -406,30 +389,4 @@ body{
     background-color: black;
     height:200px;
     margin-right: -11px;
-}
-@media only screen and (max-width: 800px){
-    .top-container{
-        background-position: -200px -90px;
-    }
-}
-
-@media only screen and (max-width: 670px){
-    .top-container{
-        background-position: -500px -90px;
-        width: 100%;
-         }
-}
-@media only screen and (max-width: 400px){
-    .top-container{
-        background-position: -600px -90px;
-        font-size: 40px
-    }
-    .heading .intro {
-        width: 300px;
-        font-size: 40px;
-      }
-      .heading .subheading, #i0{
-          font-size: 30px;
-          width:300px;
-      }
 }

@@ -47,51 +47,10 @@
 .git:hover{
     background-color: #8585e0;
 }
+.feature1{
+    margin-right: -11px;
+}
 .alig
 {
     text-align: center;
-}
-@media(max-width:978px)
-{
-    .feapara{
-        margin-left: -10px;
-        text-align: center;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-    .image1{
-        margin-right: -11px;
-    }
-}
-@media(min-width:992px)
-{
-    .image1{
-        margin-right: -11px;
-    }
-}
-@media (max-width:960px)
-{
-    @media(min-width:768px){
-    .image
-    {
-        width: 100%;
-    }
-}
-}
-@media (max-width:816px)
-{
-  @media (min-width:768px){
-   .git{
-      margin-top:-100px;
-   }
-  }   
-}
-@media (max-width:1228px)
-{
-  @media (min-width:768px){
-    .text{
-      margin-top: -30px;
-      margin-bottom: -500px;
-  }   
-}
 }

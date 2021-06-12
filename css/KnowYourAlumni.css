@@ -1,8 +1,5 @@
 .KnowYourAlum
 {
-    /* background-image: linear-gradient(blue,rgb(175, 174, 250),blue,white,blue); */
-    margin-right: -11px;
-    padding-right: 18px;
     color: black;
 }
 .image2
@@ -115,73 +112,5 @@
     }
    }
 }
-@media (max-width:768px)
-{
-    .KnowYourAlum
-    {
-        padding-right: 20px;
-    }
-    .image2{
-        padding-right: 3px;
-        width:104.5%;
-    }
-    .colitext{
-        text-align: center;
-    }
-}
-@media (max-width:1220px)
-{
-    @media (min-width:1018px){
-    .image2{
-        height:600px;
-        width: 110%;
-    }
-    .colitext{
-        padding-left: 160px;
-        padding-top: 110px;
-        margin-bottom: -35px;
-    }
-    .alumpara{
-        /* margin-left: 1px; */
-        padding-left:1px ;
-    }
-    .git2{
-        margin-left: 10px;
-    }
-}
-}
-@media (max-width:1018px)
-{
-    @media (min-width:940px){
-    .image2{
-        height:600px;
-        width: 110%;
-    }
-    .colitext{
-        padding-left: 110px;
-        padding-top: 130px;
-        margin-bottom: -35px;
-        text-align: center;
-    }
-    .alumpara{
-        /* margin-left: 1px; */
-        padding-left:1px ;
-    }
-    .git2{
-        margin-left: 10px;
-    }
-}
-}
-@media (max-width:940px)
-{
-    @media (min-width:918px){
-        .image2{
-            height:530px;
-        }
-        .colitext{
-            padding-top: 80px;
-            margin-bottom: -80px;
-        }
-    }
-}
+
 
