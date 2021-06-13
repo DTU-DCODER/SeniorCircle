@@ -28,8 +28,21 @@ body{
     justify-content: flex-start;
     align-items: flex-start;
     gap: 7%;
-    margin-right: -11px;
+    /* margin-right: -11px; */
     /* padding-top:10px; */
+}
+.colimage{
+    display: flex;
+    background-image:url("../images/Alum.png");
+    background-size: 100% 100%;
+    background-size: cover;
+    /* background-position: 10px 0px; */
+    background-repeat: no-repeat;
+    /* height: 590px; */
+    /* flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; */
+    gap: 7%;
 }
 .cover-image{
     position: absolute;
@@ -378,15 +391,15 @@ body{
 .categories{
     background-color: #090809;
     height:200px;
-    margin-right: -11px;
+    /* margin-right: -11px; */
 }
 .slideshow{
-    background-color: red;
+    background-color: rgb(165, 19, 19);
     height:200px;
-    margin-right: -11px;
+    /* margin-right: -11px; */
 }
 .footer{
     background-color: black;
     height:200px;
-    margin-right: -11px;
+    /* margin-right: -11px; */
 }

@@ -1,13 +1,15 @@
 .KnowYourAlum
 {
     color: black;
+    background-color: rgb(5, 100, 100);
 }
-.image2
+/* .image2
 {
     width: 100%;
     border-radius: 2pt;
     height:500px;
-}
+    margin-left: -12px;
+} */
 .colitext
 {
     text-align: center;
@@ -37,7 +39,7 @@
     text-align: center;
     margin-top: -50px;
     margin-bottom: -50px;
-    background-color: #4747d1;
+    background-color: #3a3ac0;
     border:solid #fff 2px;
     border-radius: 20px;
 }
@@ -53,11 +55,11 @@
     .alumhead{
         margin-top: -95px;
     }   
-    .image2{
+    /* .image2{
         height: 470px;
         padding-bottom: -50px;
         width: 110%;
-    } 
+    }  */
     .colitext{
         padding-top: 110px;
         margin-bottom: -100px;
@@ -84,11 +86,11 @@
 @media (max-width:918px)
 {
     @media (min-width:822px){ 
-    .image2{
+    /* .image2{
         height: 470px;
         padding-bottom: -50px;
         width:115%;
-    } 
+    }  */
     .colitext{
         padding-top: 130px;
         margin-bottom: -100px;
