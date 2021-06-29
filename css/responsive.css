@@ -1,0 +1,479 @@
+@media (max-width:1228px)
+{
+  @media (min-width:768px){
+    .text{
+      margin-top: -30px;
+      margin-bottom: -500px;
+  }   
+}
+}
+@media (max-width:1220px)
+{
+    @media (min-width:1018px){
+    .image2{
+        height:600px;
+        width: 110%;
+    }
+    .colitext{
+        padding-left: 160px;
+        padding-top: 110px;
+        margin-bottom: -35px;
+    }
+    .alumpara{
+        /* margin-left: 1px; */
+        padding-left:1px ;
+    }
+    .git2{
+        margin-left: 10px;
+    }
+}
+}
+@media (max-width:1200px)
+{
+    @media (min-width:992px)
+    {
+     .custombutton2{
+         margin-left: -60px;
+     }
+     .top-container{
+         padding-top: 5px;
+         margin-bottom:-90px;
+     }
+     }   
+}
+@media (max-width:1075px)
+{
+    @media (min-width:671px)
+    {
+    .intro{
+        margin-top: -30px;
+    }
+    #i1{
+        font-size: 70px;
+    }
+    #i0
+    {
+        font-size: 50px;
+    }
+   }
+}
+@media (max-width:1018px)
+{
+    @media (min-width:940px){
+    .image2{
+        height:600px;
+        width: 110%;
+    }
+    .colitext{
+        padding-left: 110px;
+        padding-top: 130px;
+        margin-bottom: -35px;
+        text-align: center;
+    }
+    .alumpara{
+        /* margin-left: 1px; */
+        padding-left:1px ;
+    }
+    .git2{
+        margin-left: 10px;
+    }
+}
+}
+@media (max-width:991px)
+{
+    @media (min-width:767px)
+    {
+     .custombutton1{
+         margin-left: -50px;
+     }   
+     .custombutton2{
+         margin-left: -125px;
+     }  
+     #i1{
+         font-size: 60px;
+     } 
+     #i0{
+         font-size: 40px;
+     }
+    }
+}
+@media (max-width:991px)
+{
+    @media (min-width:350px) {   
+     .top-container{
+        margin-bottom: -80px;
+    }
+    }
+    @media (min-width:401px)
+    {   
+     .top-container{
+        margin-bottom: -89px;
+    }
+    }
+}
+@media(min-width:992px)
+{
+    .image1{
+        margin-right: -11px;
+    }
+}
+@media(max-width:978px)
+{
+    .feapara{
+        margin-left: -10px;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .image1{
+        margin-right: -11px;
+    }
+}
+@media (max-width:960px)
+{
+    @media(min-width:768px){
+    .image
+    {
+        width: 100%;
+    }
+}
+}
+@media (max-width:940px)
+{
+    @media (min-width:918px){
+        .image2{
+            height:530px;
+        }
+        .colitext{
+            padding-top: 80px;
+            margin-bottom: -80px;
+        }
+    }
+}
+@media (max-width:900px)
+{
+    @media (min-width:800px)
+    {
+     .custombutton1{
+         margin-left: -40px;
+     }   
+     .custombutton2{
+         margin-left: -110px;
+     }   
+    }
+}
+@media (max-width:834px)
+{
+    @media (min-width:767px)
+    {
+        .custombutton1{
+            margin-left: -10px;
+        }
+        .custombutton2{
+            margin-left: -80px;
+        }
+    }
+}
+@media (max-width:816px)
+{
+  @media (min-width:768px){
+   .git{
+      margin-top:-100px;
+   }
+  }   
+}
+@media only screen and (max-width: 800px){
+    .top-container{
+        background-position: -150px -90px;
+    }
+}
+@media (max-width:800px)
+{
+    @media (min-width:671px)
+    {
+     .custombutton1{
+         margin-left: -20px;
+     }   
+     .custombutton2{
+         margin-left: -95px;
+     }   
+    }
+}
+@media (max-width:768px)
+{
+    .colimage{
+        height:500px;
+    }
+    /* @media (min-width:350px){
+        .image2{
+            width:107.2%;
+        }
+    }
+    @media (min-width:399px){
+        .image2{
+            width: 106.9%;
+        }
+    }
+    @media (min-width:431px){
+        .image2{
+            width: 106.9%;
+        }
+    }
+    @media (min-width:500px){
+        .image2{
+            width:105.8%;
+        }
+    }
+    @media (min-width:601px){
+        .image2{
+            width: 105.2%;
+        }
+    } */
+    @media (min-width:604px){
+        /* .image2{
+            width: 105.1%;
+        } */
+        .feature1{
+            width: 110.9%;
+        }
+    }
+    /* @media (min-width:614px){
+        .image2{
+            padding-right: 3px;
+            width:104.4%;
+        }
+    }
+    @media (min-width:756px){
+    .image2{
+        width:104.3%;
+    }
+    }    */
+ .colitext{
+        text-align: center;
+    }
+}
+@media (max-width:767px)
+{ 
+    #i1{
+        font-size: 60px;
+    } 
+    #i0{
+        font-size: 40px;
+    }
+@media (min-width:700px)
+{
+    .custombutton1{
+        margin-left: -70px;
+    }   
+    .custombutton2{
+        margin-left: -145px;
+    }
+}
+}
+@media (max-width:670px)
+{
+    @media (min-width:601px) {
+    .top-container{
+    background-position: -280px -90px;
+        }   
+    }
+    .top-container{
+        height: 800px;
+   }
+    .intro{
+        margin-top: 130px;
+    }
+    .custombutton1{
+        margin-left: -30px;
+    }   
+    .custombutton2{
+        margin-left: -100px;
+    }
+}
+@media (max-width:768px)
+{
+    @media (min-width:629px) {
+        .feature1{
+            width: 103.8%;
+        }
+    }
+    @media (min-width:655px) {
+        .feature1{
+            width: 103.6%;
+        }
+    }
+    @media (min-width:700px) {
+        .feature1{
+            width: 103.45%;
+        }
+    }
+    @media (min-width:733px) {
+        .feature1{
+            width: 103.3%;
+        }
+    }
+}
+@media (max-width:629px)
+{
+    @media (min-width:601px) {
+    .top-container{
+        height: 800px;
+        width: 106.5%;
+    }
+    .intro{
+        margin-top: 130px;
+    }
+    .custombutton1{
+        margin-left: -30px;
+    }   
+    .custombutton2{
+        margin-left: -100px;
+    }
+    .feature1{
+        width: 110.8%;
+    }
+    .KnowYourAlum{
+        width: 106.5%;
+    }
+    .categories{
+        width: 106.5%;
+    }
+    .slideshow{
+        width: 106.5%;
+    }
+    .footer{
+        width: 106.5%;
+    }
+    @media (min-width:618px)
+    {    .feature1{
+        width: 110.8%;
+    }}
+}
+@media only screen and (max-width: 600px){
+    .top-container{
+        background-position: -450px -90px;
+         }
+      #i0{
+        font-size: 35px;
+        width:300px;
+    }
+    #i1{
+        font-size: 55px;
+    }
+    .intro{
+        width: 400px;
+        font-size: 60px;
+    }
+    .heading .subheading{
+          font-size: 30px;
+          width:400px;
+      }
+}
+@media (max-width:600px)
+{
+    @media (min-width:576px)
+    {
+        .custombutton1{
+            margin-left: 10px;
+        }
+        .custombutton2{
+            margin-left: -60px;
+            margin-top: -10px;
+        }
+    }
+}
+@media (max-width:576px)
+{
+    @media (min-width:400px)
+    {
+        .custombutton1{
+            margin-left: 10px;
+        }
+        .custombutton2{
+            margin-left: 110px;
+            margin-top: -48px;
+        }
+    }
+}
+@media (max-width:430px)
+{
+    @media (min-width:350px)
+    {
+        .top-container{
+            width: 123.7%;
+        }
+        .feature1{
+            width: 132.6%;
+        }
+        .KnowYourAlum{
+            width:123.7%;
+        }
+        .categories{
+            width: 123.7%;
+        }
+        .slideshow{
+            width: 123.7%;
+        }
+        .footer{
+            width: 123.7%;
+        }
+    }
+}
+@media (max-width:430px)
+{
+    @media(min-width: 423px)
+    {
+        .feature1{
+            width: 131.1%;
+        }
+    }
+}
+@media (max-width:422px)
+{
+    @media(min-width: 369px)
+    {
+        .feature1{
+            width: 131.8%;
+        }
+    }
+    @media(min-width:399px)
+    {
+        .feature1{
+            width: 131.3%;
+        }
+    }
+    @media (min-width:408px)
+    {
+        .feature1{
+            width:131.3%;
+        }
+    }
+}
+@media only screen and (max-width: 400px){
+    .top-container{
+        background-position: -450px -80px;
+        font-size: 40px;
+    }
+    .heading .intro {
+        width: 300px;
+        font-size: 40px;
+      }
+    .subheading{
+        font-size: 1px;
+    } 
+    #i1{
+        font-size:50px;
+    }
+    #i0{
+       font-size: 30px;
+       width:300px;
+    }
+    .custombutton1{
+     margin-left: 10px;
+    }
+    .custombutton2{
+      margin-left: 115px;
+      margin-top: -48px;
+    }
+}
+}
