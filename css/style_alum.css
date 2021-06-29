@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+}
+.top-container {
+  background-image: linear-gradient(360deg, #09040f, rgba(0, 0, 0, 0.5)),
+    linear-gradient(
+      140deg,
+      #0c86ee,
+      #6a59ff 22%,
+      rgba(239, 69, 179, 0.6) 38%,
+      #03395d 57%,
+      #142f5a 75%,
+      #011c34
+    );
+    box-sizing: border-box;
+    background-color: #09040f;
+    padding-bottom: 200px;
+}
+
+.alumni-img{
+    width: 40%;
+    position: relative;
+    top: 200px;
+    transform: translate(50%);
+}
