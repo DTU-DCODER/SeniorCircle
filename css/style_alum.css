@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    color: #eee;
 }
 .top-container {
   background-image: linear-gradient(360deg, #09040f, rgba(0, 0, 0, 0.5)),
@@ -16,10 +17,29 @@ body{
     background-color: #09040f;
     padding-bottom: 200px;
 }
+.heading-top{
+    font-size: 50px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background: -webkit-linear-gradient(rgb(138, 85, 207), rgb(56, 136, 241));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    position: relative;
+    top: 100px;
+}
 
+.subheading{
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  position: relative;
+  top: 120px;
+  width: 40%;
+  margin: 20px auto;
+}
 .alumni-img{
     width: 40%;
     position: relative;
-    top: 200px;
-    transform: translate(50%);
+    top: 180px;
+    left: 420px;
 }
