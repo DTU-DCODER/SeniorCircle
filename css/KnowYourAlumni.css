@@ -1,7 +1,6 @@
-.KnowYourAlum
-{
-    color: black;
-    background-color: #ffff;
+.KnowYourAlum {
+  color: black;
+  background-color: #ffff;
 }
 /* .image2
 {
@@ -10,109 +9,98 @@
     height:500px;
     margin-left: -12px;
 } */
-.colitext
-{
-    text-align: center;
-    padding: 90px ;
-    /* margin-right: -100px; */
-    color: black;
+.colitext {
+  text-align: center;
+  padding: 90px;
+  /* margin-right: -100px; */
+  color: black;
 }
-.alumhead
-{
-    padding-top: 10px;
-    padding: 70px -30px;
-    font-size: 50px;
-    font-weight: 700;
-    text-align: center;
-    color:black;
-    line-height: normal;
+.alumhead {
+  padding-top: 10px;
+  padding: 70px -30px;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: center;
+  color: black;
+  line-height: normal;
 }
-.alumpara
-{
-    padding: 30px ;
-    padding-bottom: 70px;
-    color:black;
-    line-height: 20pt;
+.alumpara {
+  padding: 30px;
+  padding-bottom: 70px;
+  color: black;
+  line-height: 20pt;
 }
-.git2
-{
-    text-align: center;
-    margin-top: -50px;
-    margin-bottom: -50px;
-    background-color: #3a3ac0;
-    border:solid #fff 2px;
-    border-radius: 20px;
+.git2 {
+  text-align: center;
+  margin-top: -50px;
+  margin-bottom: -50px;
+  background-color: #3a3ac0;
+  border: solid #fff 2px;
+  border-radius: 20px;
 }
-@media (max-width:998px)
-{
-    .alumhead{
-        margin-top: -30px;
+@media (max-width: 998px) {
+  .alumhead {
+    margin-top: -30px;
+  }
+}
+@media (max-width: 918px) {
+  @media (min-width: 768px) {
+    .alumhead {
+      margin-top: -95px;
     }
-}
-@media (max-width:918px)
-{
-    @media (min-width:768px){
-    .alumhead{
-        margin-top: -95px;
-    }   
     /* .image2{
         height: 470px;
         padding-bottom: -50px;
         width: 110%;
     }  */
-    .colitext{
-        padding-top: 110px;
-        margin-bottom: -100px;
-        text-align: center;
-        /* margin-left: 40px; */
-        padding-right: 0px;
+    .colitext {
+      padding-top: 110px;
+      margin-bottom: -100px;
+      text-align: center;
+      /* margin-left: 40px; */
+      padding-right: 0px;
     }
-    .colimage{
-        vertical-align: middle;
+    .colimage {
+      vertical-align: middle;
     }
-    .alumpara{
-        padding-bottom: 120px;
+    .alumpara {
+      padding-bottom: 120px;
     }
-    .git2
-    {
-        padding-top: 10px;
-        margin-top: 200px;
+    .git2 {
+      padding-top: 10px;
+      margin-top: 200px;
     }
-    .KnowYourAlum{
-        padding-right:  100px;
+    .KnowYourAlum {
+      padding-right: 100px;
     }
-   }
+  }
 }
-@media (max-width:918px)
-{
-    @media (min-width:822px){ 
+@media (max-width: 918px) {
+  @media (min-width: 822px) {
     /* .image2{
         height: 470px;
         padding-bottom: -50px;
         width:115%;
     }  */
-    .colitext{
-        padding-top: 130px;
-        margin-bottom: -100px;
-        text-align: center;
-        /* margin-left: 40px; */
-        padding-right: -30px;
+    .colitext {
+      padding-top: 130px;
+      margin-bottom: -100px;
+      text-align: center;
+      /* margin-left: 40px; */
+      padding-right: -30px;
     }
-    .colimage{
-        vertical-align: middle;
+    .colimage {
+      vertical-align: middle;
     }
-    .alumpara{
-        padding-bottom: 70px;
+    .alumpara {
+      padding-bottom: 70px;
     }
-    .git2
-    {
-        padding-top: 10px;
-        margin-top: 200px;
+    .git2 {
+      padding-top: 10px;
+      margin-top: 200px;
     }
-    .KnowYourAlum{
-        padding-right:  100px;
+    .KnowYourAlum {
+      padding-right: 100px;
     }
-   }
+  }
 }
-
-
