@@ -166,8 +166,3 @@ body {
       transform:translateZ(0)!important;
       -webkit-transform:translateZ(0)!important;
       opacity:1!important} */
-.categories {
-  background-color: #090809;
-  height: 200px;
-  /* margin-right: -11px; */
-}
