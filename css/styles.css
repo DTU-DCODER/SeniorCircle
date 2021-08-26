@@ -16,6 +16,8 @@ body {
   margin-left: 0px;
   margin-right: 0px;
   background-color: #dccdf6 !important;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 .top-container {
   display: flex;
