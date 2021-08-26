@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 .categories {
-  background-color: white;
+  background-color: #dccdf6;
   margin: 0.7em 1em;
 }
 .frame-1 {
@@ -10,8 +10,8 @@
   width: 100%;
   /* height: 343px; */
   padding: 1em;
-  background: #fff8e4;
-  /* #f9d2ff */
+  background: #f9d2ff;
+  /* #fff8e4; */
   display: grid;
   grid-template-rows: 60px 3fr;
   border-radius: 1em;
@@ -33,7 +33,8 @@
   height: 31px;
   /*left: 60px;
   top: 108px; */
-  background: #fce38d;
+  background: #dc9ee3;
+  /* #fce38d; */
   border: 1px solid #000000;
   border-radius: 20px;
   box-sizing: border-box;
@@ -55,7 +56,8 @@
   left: 20px;
 }
 .button-wrapper .card:hover {
-  background: #ffd749;
+  background: #ac7ffa;
+  /* #ffd749; */
 }
 /* .card:active{
     background: #FFD749;
