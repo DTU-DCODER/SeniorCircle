@@ -1,9 +1,8 @@
+import {secrets} from "./uri"
 // const { apply } = require('core-js/fn/reflect');
 const mongoose = require('mongoose');
 const { config } = require('yargs');
-// mongoose.connect('mongodb://localhost:27017/userdb');
-mongoose.connect('mongodb+srv://amit:b4SPE7hkFgJkiKRQ@seniorcircle.z5ejt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
-
+mongoose.connect(`mongodb+srv://${secrets.username}:${secrets.password}@${secrets.url}`)
 const userSchema = new mongoose.Schema({
     first_name: String,
     last_name: String,
