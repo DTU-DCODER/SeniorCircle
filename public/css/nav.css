@@ -1,0 +1,8 @@
+.solid-nav {
+    background-color: #aaa;
+    transition: background-color 0.2s linear;
+  }
+.circle{
+  border-radius: 40px;
+  object-fit: cover;
+}

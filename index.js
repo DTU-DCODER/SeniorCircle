@@ -5,10 +5,11 @@ const mongoose = require('mongoose');
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-
+app.set("view engine",'ejs');
+app.use(express.static('public'));
 // mongoose.connect(`mongodb+srv://${secrets.username}:${secrets.password}@${secrets.url}`)
 mongoose.connect("mongodb+srv://amit:RYqfUTDsgZPmE5B6@seniorcircle.z5ejt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
-
+var signedIN = true;
 const userSchema = new mongoose.Schema({
     first_name: String,
     last_name: String,
@@ -39,7 +40,10 @@ const blogSchema = new mongoose.Schema({
         required: [true, "You didn't enter title"]},
     author_id : mongoose.Types.ObjectId,
     description :String,
+    companyName: String,
+    date : String,
     comment: commentSchema,
+    author: ,
 })
 
 const User = mongoose.model('User',userSchema);
@@ -83,15 +87,24 @@ const Review = mongoose.model("Review", commentSchema);
 console.log("Server started succesfully");
 
 app.get("/", (req,res)=>{
-    res.sendFile(__dirname + "/apps/Blog.html");
+    res.render("index",{signedIN: signedIN});
+});
+app.get("/compose", (req,res)=>{
+    res.render("Blog");
 })
 app.use(bodyParser.urlencoded({extended: true}));
 app.post("/",function(req,res){
+    const date = new Date();
+    var options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+    const blog_date = date.toLocaleDateString('en-US',options);
     const blog= new Blog({
         title : req.body.title,
         description : req.body.description,
-    })
-blog.save();
+        date: blog_date,
+        companyName: req.body.company,
+    });
+    console.log(blog);
+// blog.save();
 res.redirect('/');
 
 })
