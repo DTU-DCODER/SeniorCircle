@@ -1,51 +1,56 @@
 const secrets = require("./uri");
 // const { apply } = require('core-js/fn/reflect');
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 // const { config } = require('yargs');
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-app.set("view engine",'ejs');
-app.use(express.static('public'));
+app.set("view engine", "ejs");
+app.use(express.static("public"));
 // mongoose.connect(`mongodb+srv://${secrets.username}:${secrets.password}@${secrets.url}`)
-mongoose.connect("mongodb+srv://amit:RYqfUTDsgZPmE5B6@seniorcircle.z5ejt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+mongoose.connect(
+  "mongodb+srv://amit:RYqfUTDsgZPmE5B6@seniorcircle.z5ejt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+);
 var signedIN = true;
 const userSchema = new mongoose.Schema({
-    first_name: String,
-    last_name: String,
-    user_name: String,
-    Branch:{
-        type: String,
-        required: false,
-    },
-    year: Number,
-    linkedin_ID: String,
-    password: String,
+  first_name: String,
+  last_name: String,
+  user_name: String,
+  Branch: {
+    type: String,
+    required: false,
+  },
+  year: Number,
+  linkedin_ID: String,
+  password: String,
 });
 
 // localhost::5000/
 const doubtSchema = new mongoose.Schema({
-    author: String,
-    question: String,
-    answer: String
-})
+  author: String,
+  question: String,
+  answer: String,
+});
 const commentSchema = new mongoose.Schema({
-    likes: Number,
-    user_id : mongoose.Types.ObjectId,
-    description :String,
-})
+  likes: Number,
+  user_id: mongoose.Types.ObjectId,
+  description: String,
+});
 const blogSchema = new mongoose.Schema({
-    title: {
-        type: String,
-        required: [true, "You didn't enter title"]},
-    author_id : mongoose.Types.ObjectId,
-    description :String,
-    companyName: String,
-    date : String,
-    comment: commentSchema,
-})
+  title: {
+    type: String,
+    required: [true, "You didn't enter title"],
+  },
+  author_id: mongoose.Types.ObjectId,
+  description: String,
+  companyName: String,
+  date: String,
+  time: String,
+  comment: commentSchema,
+  author: userSchema,
+});
 
-const User = mongoose.model('User',userSchema);
+const User = mongoose.model("User", userSchema);
 const Blog = mongoose.model("Blog", blogSchema);
 const Review = mongoose.model("Review", commentSchema);
 // const user = new User({
@@ -85,28 +90,29 @@ const Review = mongoose.model("Review", commentSchema);
 // });
 console.log("Server started succesfully");
 
-app.get("/", (req,res)=>{
-    res.render("index",{signedIN: signedIN});
+app.get("/", (req, res) => {
+  res.render("index", { signedIN: signedIN });
 });
-app.get("/compose", (req,res)=>{
-    res.render("Blog");
-})
-app.use(bodyParser.urlencoded({extended: true}));
-app.post("/",function(req,res){
-    const date = new Date();
-    var options = { year: 'numeric', month: 'numeric', day: 'numeric' };
-    const blog_date = date.toLocaleDateString('en-US',options);
-    const blog= new Blog({
-        title : req.body.title,
-        description : req.body.description,
-        date: blog_date,
-        companyName: req.body.company,
-    });
-    console.log(blog);
-// blog.save();
-res.redirect('/');
-
-})
-app.listen(3000, ()=>{
-    console.log("Server started at port 3000");
-} ); 
+app.get("/compose", (req, res) => {
+  res.render("Blog");
+});
+app.use(bodyParser.urlencoded({ extended: true }));
+app.post("/", function (req, res) {
+  const date = new Date();
+  const cur_time = date.toLocaleTimeString("en-US");
+  var options = { year: "numeric", month: "numeric", day: "numeric" };
+  const blog_date = date.toLocaleDateString("en-US", options);
+  const blog = new Blog({
+    title: req.body.title,
+    description: req.body.description,
+    date: blog_date,
+    time: cur_time,
+    companyName: req.body.company,
+  });
+  console.log(blog);
+  // blog.save();
+  res.redirect("/");
+});
+app.listen(3000, () => {
+  console.log("Server started at port 3000");
+});
