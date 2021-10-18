@@ -43,7 +43,6 @@ const blogSchema = new mongoose.Schema({
     companyName: String,
     date : String,
     comment: commentSchema,
-    author: ,
 })
 
 const User = mongoose.model('User',userSchema);
