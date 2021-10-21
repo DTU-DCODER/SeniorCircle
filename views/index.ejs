@@ -1,0 +1,383 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/category.css" rel="stylesheet" />
+    <link href="css/KnowYourAlumni.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="css/slideshow.css" rel="stylesheet" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    /> -->
+    <script
+      async
+      defer
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      async
+      defer
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+    ></script>
+
+    <title>SeniorCircle</title>
+  </head>
+  <body>
+      <%-include('navbar',{signedIN:signedIN,
+       if(usrDetails){ 
+          usrDetails:usrDetails
+      }  })-%>
+    <div class="top-container">
+      <div class="heading">
+        <div class="animated fadeIn" style="animation-delay: 500ms">
+          <h1 class="intro topad" id="i0">Introducing</h1>
+          <h1 class="intro" id="i1">Senior</h1>
+          <h1 class="intro" id="i1" style="color: rgba(68, 4, 63, 0.719)">
+            Circle
+          </h1>
+        </div>
+        <div class="animated fadeInUp" style="animation-delay: 1000ms">
+          <p class="subheading">
+            <strong>A platform where experiences are empowered.</strong>
+          </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2 col-md-3 col-sm-4">
+            <form 
+            <% if(signedIN==false){ %>
+              action="/login" 
+            <% }else{ %>
+              action="/compose" 
+            <% } %> 
+              method="get"
+            >
+              <button
+              type="submit"
+              class="btn btn-primary btn-lg custombutton1"
+              style="color: white; background-color: rgb(34, 56, 68)"
+              onmouseover="this.style.background='rgb(24, 69, 94)';"
+              onmouseout="this.style.background='rgb(34, 56, 68)';"
+              >
+            <%if(signedIN==false){%>
+              LOGIN
+              <%}%>
+              <%if(signedIN==true){%>
+                GET STARTED
+                <%}%>
+            </button>
+            </form>
+           
+          </div>
+          <%if(signedIN==false){%>
+          <div class="col-lg-2 col-md-3 col-sm-4">
+            <form action="/register" method="get">
+              <button
+              type="submit"
+              class="btn btn-primary btn-lg custombutton2"
+              style="color: white; background-color: rgb(34, 56, 68)"
+              onmouseover="this.style.background='rgb(24, 69, 94)';"
+              onmouseout="this.style.background='rgb(34, 56, 68)';"
+            >
+              SIGN UP
+            </button>
+            </form>
+          </div>
+          <%}%>
+
+        </div>
+      </div>
+    </div>
+    <div class="categories">
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Montserrat"
+      />
+      <div class="frame-1">
+        <div class="headline"><h1>Categories</h1></div>
+        <div class="button-wrapper">
+          <button class="card">
+            <span>Lorem</span>
+          </button>
+          <button class="card">
+            <span>Lorem</span>
+          </button>
+          <button class="card">
+            <span>Lorem</span>
+          </button>
+          <button class="card">
+            <span>Lorem</span>
+          </button>
+          <button class="card">
+            <span>Lorem</span>
+          </button>
+          <button class="card">
+            <span>Lorem</span>
+          </button>
+          <button class="card">
+            <span>Lorem</span>
+          </button>
+          <button class="card">
+            <span>Lorem</span>
+          </button>
+          <button class="card">
+            <span>Lorem</span>
+          </button>
+          <img src="https://img.icons8.com/ios-glyphs/30/000000/plus.png" />
+        </div>
+      </div>
+    </div>
+    <div class="slideshow">
+      <section class="section slider">
+        <input type="radio" name="slider" id="slide-1" class="slider__radio" />
+
+        <input type="radio" name="slider" id="slide-2" class="slider__radio" />
+
+        <input
+          type="radio"
+          name="slider"
+          id="slide-3"
+          class="slider__radio"
+          checked
+        />
+
+        <input type="radio" name="slider" id="slide-4" class="slider__radio" />
+
+        <input type="radio" name="slider" id="slide-5" class="slider__radio" />
+
+        <div class="slider__holder">
+          <!-- *********Slider__item 1***************** -->
+          <label for="slide-1" class="slider__item slider__item--1 card">
+            <div class="slider__item-content allCardContent-1">
+              <div class="slideHeading-1">
+                <img
+                  class="profileImage"
+                  src="https://images.unsplash.com/photo-1457986811718-8254e452e199?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+                  alt="image not here"
+                />
+                <div class="profileName">
+                  <p class="heading-3 heading-3--light">Development</p>
+                  <p class="heading-3">SCSS Only slider</p>
+                </div>
+              </div>
+
+              <div class="insideContent">
+                <p class="slider__item-text serif">
+                  This tutorial will teach you how to create a SCSS only
+                  responsive slider. Feel free to read the whole tutorial or
+                  just download and try it by yourself.
+                </p>
+              </div>
+              <a
+                class="readMoreButton-1"
+                href="https://blog.significa.pt/css-only-slider-71727effff0b#.e5t9l7b55"
+                >Read More</a
+              >
+            </div>
+          </label>
+
+          <!--*********Slider__item 2**************** -->
+
+          <label for="slide-2" class="slider__item slider__item--2 card">
+            <div class="slider__item-content allCardContent-2">
+              <div class="slideHeading-2">
+                <img
+                  class="profileImage"
+                  src="https://images.unsplash.com/photo-1494722217224-2170c24398c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1234&q=80"
+                  alt="image not here"
+                />
+                <div class="profileName">
+                  <p class="heading-3 heading-3--light">Development</p>
+                  <p class="heading-3">SCSS Only slider</p>
+                </div>
+              </div>
+              <div class="insideContent">
+                <p class="slider__item-text serif">
+                  This tutorial will teach you how to create a SCSS only
+                  responsive slider. Feel free to read the whole tutorial or
+                  just download and try it by yourself.
+                </p>
+              </div>
+              <a
+                class="readMoreButton-2"
+                href="https://blog.significa.pt/css-only-slider-71727effff0b#.e5t9l7b55"
+                >Read More</a
+              >
+            </div>
+          </label>
+
+          <!--**************** Slider__item 3**********-->
+
+          <label for="slide-3" class="slider__item slider__item--3 card">
+            <div class="slider__item-content allCardContent-3">
+              <div class="slideHeading-3 bg-primary bg-gradient">
+                <img
+                  class="profileImage"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-w2591f9YpSmbvrtAmeWGbesuPcYgQi-tMA&usqp=CAU"
+                  alt="image not here"
+                />
+                <div class="profileName">
+                  <p class="heading-3 heading-3--light">Development</p>
+                  <p class="heading-3">SCSS Only slider</p>
+                </div>
+              </div>
+              <div class="insideContent">
+                <p class="slider__item-text serif">
+                  This tutorial will teach you how to create a SCSS only
+                  responsive slider. Feel free to read the whole tutorial or
+                  just download and try it by yourself.
+                </p>
+              </div>
+              <a
+                class="readMoreButton-3"
+                href="https://blog.significa.pt/css-only-slider-71727effff0b#.e5t9l7b55"
+                >Read More</a
+              >
+            </div>
+          </label>
+          <!--*********** Slider__item 4*************-->
+
+          <label for="slide-4" class="slider__item slider__item--4 card">
+            <div class="slider__item-content allCardContent-4">
+              <div class="slideHeading-4 bg-primary bg-gradient">
+                <img
+                  class="profileImage"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMWsgjSzZ84to3Hs9MHSUWUaVgHko9W1uWg6Pfq8N3VDBqhPb5o6JsK3K8&s=10"
+                  alt="image not here"
+                />
+                <div class="profileName">
+                  <p class="heading-3 heading-3--light">Development</p>
+
+                  <p class="heading-3">SCSS Only slider</p>
+                </div>
+              </div>
+
+              <div class="insideContent">
+                <p class="slider__item-text serif">
+                  This tutorial will teach you how to create a SCSS only
+                  responsive slider. Feel free to read the whole tutorial or
+                  just download and try it by yourself.
+                </p>
+              </div>
+
+              <a
+                class="readMoreButton-4"
+                href="https://blog.significa.pt/css-only-slider-71727effff0b#.e5t9l7b55"
+                >Read More</a
+              >
+            </div>
+          </label>
+
+          <!-- **********Slider__item 5************** -->
+
+          <label for="slide-5" class="slider__item slider__item--5 card">
+            <div class="slider__item-content allCardContent-5">
+              <div class="slideHeading-5">
+                <img
+                  class="profileImage"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQKrP-TmAp9gvnA1LpQUHxFoinH54yUxhOfA&usqp=CAU"
+                  alt="image not here"
+                />
+                <div class="profileName">
+                  <p class="heading-3 heading-3--light">Development</p>
+                  <p class="heading-3">SCSS Only slider</p>
+                </div>
+              </div>
+              <div class="insideContent">
+                <p class="slider__item-text serif">
+                  This tutorial will teach you how to create a SCSS only
+                  responsive slider. Feel free to read the whole tutorial or
+                  just download and try it by yourself.
+                </p>
+              </div>
+              <a
+                class="readMoreButton-5"
+                href="https://blog.significa.pt/css-only-slider-71727effff0b#.e5t9l7b55"
+                >Read More</a
+              >
+            </div>
+          </label>
+        </div>
+
+        <!-- Slider Holder -->
+
+        <div class="bullets">
+          <label for="slide-1" class="bullets__item bullets__item--1"></label>
+          <label for="slide-2" class="bullets__item bullets__item--2"></label>
+          <label for="slide-3" class="bullets__item bullets__item--3"></label>
+          <label for="slide-4" class="bullets__item bullets__item--4"></label>
+          <label for="slide-5" class="bullets__item bullets__item--5"></label>
+        </div>
+        <!-- Bullets -->
+      </section>
+      <!-- Section Slider -->
+    </div>
+    <a href="/company"><h1>Show More</h1></a> 
+    <div id="features" class="container-fluid">
+      <div class="row feature1">
+        <div class="col-lg-6 col-md-6 text">
+          <div class="feahead">Join Our <br />Community</div>
+          <div class="row feapara">
+            <div class="col">
+              but also the leap into electronic typesetting, remaining
+              essentially unchanged. It was popularised in the 1960s with the
+              release of Letraset sheets containing Lorem es, and more recently
+              with desktop publishing software like Aldus PageMaker including
+              versions of Lorem Ipsum.
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary btn-lg git" href="">
+            Get-in Touch
+          </button>
+        </div>
+        <div class="col-lg-6 col-md-6 secrow">
+          <img
+            class="image1"
+            src="images/original.png"
+            alt="Join the community"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="KnowYourAlum container-fluid">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 colimage"></div>
+        <div class="col-lg-6 col-md-6 colitext">
+          <div class="alumhead">Know your Alumni</div>
+          <div class="alumpara">
+            Want to know the depth concepts of the interview, cracks of the
+            various rounds of the interviews, then you are just one click away
+            <br />
+            Click Below !!!
+          </div>
+          <button type="button" class="btn btn-secondary btn-lg git" href="">
+            Get-in Touch
+          </button>
+        </div>
+      </div>
+    </div>
+    <%-include("footer")-%>
+  </body>
+</html>

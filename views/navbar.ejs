@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/nav.css" />
+    <title>senior circle stubcode</title>
+  </head>
+
+  <body style="background-color: #63b4b8">
+    <!-- NAVBAR -->
+    <div class="nav-container">
+      <nav
+        style="font-size: 120%; font-weight: 500"
+        class="navbar navbar-expand-lg navbar-light p-md-3 fixed-top"
+        id="navbar"
+      >
+        <img
+          style="width: 76.5px; height: 60.7px"
+          src="images/logoff3.png"
+          alt="logo"
+        />
+        <a class="navbar-brand" href="">Senior Circle</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <ul class="navbar-nav ml-auto" style="margin: auto">
+            <li class="nav-item">
+              <a class="nav-link">Categories</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link">Slideshow</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/compose">Write Blog</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link">Feature2</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link">Footer</a>
+            </li>
+          </ul>
+          <%if(signedIN==false){%>
+          <ul class="navbar-nav ml-auto right">
+            <li class="nav-item">
+              <a class="nav-link">Login</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link">Register</a>
+            </li>
+          </ul>
+          <%}%> <%if(signedIN==true){%>
+          <li class="nav-item dropdown">
+            <a
+              class="navbar-brand nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <!-- <img src="https://img.icons8.com/office/16/000000/user.png" alt="" width="30" height="24" class="d-inline-block align-text-top"> -->
+              <img src="<%if(usrDetails&&usrDetails.imageUrl) {%>
+                  <%= usrDetails.imageUrl %>
+                 <% } else { %>
+                    ../images/unknown.jpg
+                 <%}%>"
+                alt=""
+                width="30"
+                height="24"
+                class="d-inline-block align-text-top circle"
+              />
+              <%= usrDetails.firstName %>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Sign Out</a></li>
+            </ul>
+          </li>
+          <%}%>
+        </div>
+      </nav>
+    </div>
+    <div class="box"></div>
+
+    <script>
+      // window.onscroll = function () {
+      //   scrollFunction();
+      // };
+
+      // function scrollFunction() {
+      //   if (
+      //     document.body.scrollTop > 20 ||
+      //     document.documentElement.scrollTop > 20
+      //   ) {
+      //     document.getElementById("navbar").style.background =
+      //       "rgba(255,255,255,0.5)";
+      //     document.getElementById("navbar").style.filter = "alpha(opacity=50)";
+      //   } else if (document.body.scrollHeight < 20) {
+      //     document.getElementById("navbar").style.background = "transparent";
+      //   }
+      // }
+      window.addEventListener("DOMContentLoaded", (event) => {
+        jQuery("div.nav-container.navbar").css(
+          "background-color",
+          "rgba(255, 255, 255, 0.2)"
+        );
+        jQuery(window).scroll(function () {
+          if (jQuery(window).scrollTop() > 0) {
+            jQuery("div.nav-container.navbar").css("background-color", "#000");
+          } else {
+            jQuery("div.nav-container.navbar").css(
+              "background-color",
+              "rgba(255, 255, 255, 0.2)"
+            );
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

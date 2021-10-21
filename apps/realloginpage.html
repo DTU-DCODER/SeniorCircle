@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/login.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Authentication</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <img src="../images/logoff2.png" alt="logo" />
+      </header>
+      <div class="content-wrapper">
+        <div class="illustration">
+          <img src="../images/job-intern.jpg" alt="job-illustration" />
+        </div>
+        <div class="info">
+          <div class="info-content">
+            <h2>Create your account</h2>
+            <span> Created for students by students</span> 
+            <form action="/login" method="POST">
+            <!-- <div class="text-field" id="firstname">  
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/000000/name.png"
+                alt="icon"
+              />
+              <input
+                placeholder="First Name"
+                type="text"
+                tabindex="1"
+                class="input-field"
+                value="",
+                name="firstName"
+              />
+            </div>
+            <div class="text-field" id="lastname">
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/000000/name.png"
+                alt="icon"
+              />
+              <input
+                placeholder="Last Name"
+                type="text"
+                tabindex="1"
+                class="input-field"
+                value="",
+                name="lastName"
+              />
+            </div>-->
+            <div class="text-field" id="username"> 
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/000000/name.png"
+                alt="icon"
+              />
+              <input
+                placeholder="User Name"
+                type="text"
+                tabindex="1"
+                class="input-field"
+                value="",
+                name="username"
+              />
+            </div>
+            <div class="text-field" id="password">
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/000000/name.png"
+                alt="icon"
+              />
+              <input
+                placeholder="Password"
+                type="password"
+                tabindex="1"
+                class="input-field"
+                value="",
+                name="password"
+              />
+            </div>
+
+            <!-- <div class="text-field" id="confirm_pass">
+              <img
+                src="https://img.icons8.com/ios-glyphs/30/000000/name.png"
+                alt="icon"
+              />
+              <input
+                placeholder="Confirm Password"
+                type="password"
+                tabindex="1"
+                class="input-field"
+                value="",
+                name="cPassword"
+              />
+            </div> -->
+            <!-- <label
+              id="default"
+              role="checkbox"
+              tabindex="1"
+              aria-checked="false"
+            > 
+              
+              <div>
+                <span>I agree to the Terms &amp; Conditions</span>
+              </div></label
+            > -->
+
+            <div class="buttonsDiv">
+                <button type="submit"><h3>Login</h3></button> 
+               
+              <!-- <a class="linkedinButton" href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&state=foobar&scope=r_liteprofile%20r_emailaddress&client_id=78armc0eqkp8bl&redirect_uri=http://localhost:3000/"><i class="fa fa-linkedin linkedinIcon" aria-hidden="true"></i></a>   --> 
+
+              <a class="linkedinButton" href="/auth/linkedin"><i class="fa fa-linkedin linkedinIcon" aria-hidden="true"></i></a>  
+              <a class="googleButton" href="/auth/google"><i class="fa fa-google" aria-hidden="true"></i></a>
+            </div> 
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/login.js"></script>
+  </body>
+</html>

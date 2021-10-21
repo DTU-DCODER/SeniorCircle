@@ -1,0 +1,21 @@
+.solid-nav {
+  background-color: #aaa;
+  transition: background-color 0.2s linear;
+}
+.circle {
+  border-radius: 40px;
+  object-fit: cover;
+}
+nav.navbar {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+nav.navbar-inverse {
+  background-color: #222;
+  border-color: #080808;
+}
+
+nav.navbar.transparent {
+  background-color: rgba(0, 0, 0, 0);
+}
