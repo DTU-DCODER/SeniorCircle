@@ -94,7 +94,7 @@ passport.deserializeUser(function (user, done) {
 passport.use(new GoogleStrategy({
   clientID: process.env.G_CLIENT_ID,
   clientSecret: process.env.G_CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/home",
+  callbackURL: "https://agile-castle-96458.herokuapp.com/auth/google/home",
   userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
 },
   function (accessToken, refreshToken, profile, cb) {
@@ -124,7 +124,7 @@ passport.use(new GoogleStrategy({
 passport.use(new LinkedInStrategy({
   clientID: process.env.L_CLIENT_ID,
   clientSecret: process.env.L_CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/linkedin/home",
+  callbackURL: "https://agile-castle-96458.herokuapp.com/auth/linkedin/home",
   scope: ['r_emailaddress', 'r_liteprofile'],
   state: true
 }, function (accessToken, refreshToken, profile, done) {
@@ -199,7 +199,7 @@ app.get("/", (req, res) => {
       else{
         currentUser = await User.findOne({username:req.user.username});
       } 
-      // console.log( currentUser );
+      console.log( currentUser );
       res.render("index", { signedIN: true, usrDetails: currentUser });
     })();
   }
@@ -209,7 +209,6 @@ app.get("/", (req, res) => {
     //   LinkedinInfo(AUTHCODE, res);
     // }
     // else { 
-      console.log("skmkdmsakm");
       res.render("index", {signedIN: false});
     // }
   }

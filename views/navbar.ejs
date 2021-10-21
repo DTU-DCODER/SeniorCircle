@@ -23,12 +23,13 @@
         class="navbar navbar-expand-lg navbar-light p-md-3 fixed-top"
         id="navbar"
       >
-        <img
-          style="width: 76.5px; height: 60.7px"
-          src="images/logoff3.png"
-          alt="logo"
-        />
-        <a class="navbar-brand" href="">Senior Circle</a>
+      <a href="/"><img
+        style="width: 76.5px; height: 60.7px"
+        src="images/logoff3.png"
+        alt="logo"
+      /></a>
+        
+        <a class="navbar-brand" href="/">Senior Circle</a>
 
         <button
           class="navbar-toggler"
@@ -67,11 +68,11 @@
           <%if(signedIN==false){%>
           <ul class="navbar-nav ml-auto right">
             <li class="nav-item">
-              <a class="nav-link">Login</a>
+              <a href="/login" class="nav-link">Login</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link">Register</a>
+              <a href="/register" class="nav-link">Register</a>
             </li>
           </ul>
           <%}%> <%if(signedIN==true){%>
@@ -101,7 +102,7 @@
               <li><a class="dropdown-item" href="#">Profile</a></li>
               <li><a class="dropdown-item" href="#">Settings</a></li>
               <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Sign Out</a></li>
+              <li><a class="dropdown-item" href="/signout">Sign Out</a></li>
             </ul>
           </li>
           <%}%>
@@ -111,38 +112,61 @@
     <div class="box"></div>
 
     <script>
-      // window.onscroll = function () {
-      //   scrollFunction();
-      // };
+  window.onscroll = function() {scrollFunction()};
 
-      // function scrollFunction() {
-      //   if (
-      //     document.body.scrollTop > 20 ||
-      //     document.documentElement.scrollTop > 20
-      //   ) {
-      //     document.getElementById("navbar").style.background =
-      //       "rgba(255,255,255,0.5)";
-      //     document.getElementById("navbar").style.filter = "alpha(opacity=50)";
-      //   } else if (document.body.scrollHeight < 20) {
-      //     document.getElementById("navbar").style.background = "transparent";
-      //   }
-      // }
-      window.addEventListener("DOMContentLoaded", (event) => {
-        jQuery("div.nav-container.navbar").css(
-          "background-color",
-          "rgba(255, 255, 255, 0.2)"
-        );
-        jQuery(window).scroll(function () {
-          if (jQuery(window).scrollTop() > 0) {
-            jQuery("div.nav-container.navbar").css("background-color", "#000");
-          } else {
-            jQuery("div.nav-container.navbar").css(
-              "background-color",
-              "rgba(255, 255, 255, 0.2)"
-            );
-          }
-        });
-      });
+function scrollFunction() {
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  
+  document.getElementById("navbar").style.background = "#501e27";
+} else if(document.body.scrollHeight < 20) {
+  document.getElementById("navbar").style.background = "transparent";
+}
+else {
+  document.getElementById("navbar").style.background = "rgba(255,255,255,0.5)";
+  document.getElementById("navbar").style.filter = "alpha(opacity=50)";
+}
+}
+
+
+      window.onscroll = function () {
+      //   if(this.oldScroll > this.scrollY){
+      //     scrollFunction();
+      // // scrolling down
+      //     } else {
+           scrollFunction();
+        //  }
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          document.getElementById("navbar").style.background =
+            "rgba(255,255,255,0.5)";
+          document.getElementById("navbar").style.filter = "alpha(opacity=50)";
+        } else if (document.body.scrollHeight < 20) {
+           document.getElementById("navbar").style.background = "transparent";
+        }
+      }
+
+
+      // window.addEventListener("DOMContentLoaded", (event) => {
+      //   jQuery("div.nav-container.navbar").css(
+      //     "background-color",
+      //     "rgba(255, 255, 255, 0.2)"
+      //   );
+      //   jQuery(window).scroll(function () {
+      //     if (jQuery(window).scrollTop() > 0) {
+      //       jQuery("div.nav-container.navbar").css("background-color", "#000");
+      //     } else {
+      //       jQuery("div.nav-container.navbar").css(
+      //         "background-color",
+      //         "rgba(255, 255, 255, 0.2)"
+      //       );
+      //     }
+      //   });
+      // });
     </script>
   </body>
 </html>
