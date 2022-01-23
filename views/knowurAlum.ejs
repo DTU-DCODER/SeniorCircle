@@ -2,21 +2,119 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style_alum.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style_alum.css" />
+
     <title>Know Your Alumni</title>
   </head>
   <body>
+    <%-include('navbar')-%>
     <div class="top-container">
-      <h1 class="heading-top">Know your alumni</h1>
-      <p class="subheading">
-        Meet seniors and mentors ready to help you in your journey
-      </p>
-      <img
-        class="alumni-img"
-        src="../images/alumni-new-removebg-preview.png"
-        alt="alumni"
-      />
+      <div class="top-wrapper">
+        <h1 class="heading-top">Know your alumni</h1>
+        <p class="subheading">
+          Meet seniors and mentors ready to help you in your journey
+        </p>
+      </div>
+      <div>
+        <img
+          class="alumni-img"
+          src="/images/alumni-new-removebg-preview.png"
+          alt="alumni"
+        />
+      </div>
     </div>
+
+    <div class="wrapper">
+
+<%for(let i=0 ;allUsers && i<allUsers.length ;i++){%>
+
+  <div class="outer">
+    <img
+      class="profile"
+      src="<%if(allUsers[i]&&allUsers[i].imageUrl) {%>
+        <%= allUsers[i].imageUrl %>
+       <% } else { %>
+          ../images/unknown.jpg
+       <%}%>"
+    />
+    <h2 class="Name"><%=allUsers[i].firstName%> <%=allUsers[i].lastName%></h2>
+    <h3 class="status">Third Year</h3>
+    <div class="Info">
+      <ul>
+        <li>Interned at XYZ</li>
+        <li>Interned at XYZ</li>
+        <li>Placed at XYZ</li>
+      </ul>
+    </div>
+    <div class="social-icons">
+      <img src="https://img.icons8.com/color/48/000000/linkedin.png" />
+      <button>
+        <img src="https://img.icons8.com/fluency/48/000000/blog.png" />
+        <h2>Read Blogs</h2>
+      </button>
+    </div>
+  </div>
+
+<%}%>
+
+     
+     
+     
+     
+     
+     
+      <!-- <div class="outer">
+        <img
+          class="profile"
+          src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyOTk5MTk2MA&ixlib=rb-1.2.1&q=85"
+        />
+        <h2 class="Name">Rahul Singh</h2>
+        <h3 class="status">Third Year</h3>
+        <div class="Info">
+          <ul>
+            <li>Interned at XYZ</li>
+            <li>Interned at XYZ</li>
+            <li>Placed at XYZ</li>
+          </ul>
+        </div>
+        <div class="social-icons">
+          <img src="https://img.icons8.com/color/48/000000/linkedin.png" />
+          <button>
+            <img src="https://img.icons8.com/fluency/48/000000/blog.png" />
+            <h2>Read Blogs</h2>
+          </button>
+        </div>
+      </div>
+      <div class="outer">
+        <img
+          class="profile"
+          src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyOTk5MTk2MA&ixlib=rb-1.2.1&q=85"
+        />
+        <h2 class="Name">Rahul Singh</h2>
+        <h3 class="status">Third Year</h3>
+        <div class="Info">
+          <ul>
+            <li>Interned at XYZ</li>
+            <li>Interned at XYZ</li>
+            <li>Placed at XYZ</li>
+          </ul>
+        </div>
+        <div class="social-icons">
+          <img src="https://img.icons8.com/color/48/000000/linkedin.png" />
+          <button>
+            <img src="https://img.icons8.com/fluency/48/000000/blog.png" />
+            <h2>Read Blogs</h2>
+          </button>
+        </div>
+      </div> -->
+    </div>
+    <%-include('footer')-%>
   </body>
 </html>

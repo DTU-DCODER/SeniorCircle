@@ -80,7 +80,7 @@
             <%  for(let i=0 ; blogPosts && i<blogPosts.length ;i++){ %>
               <div class="col-md-6 col-lg-4 clm col-sm-6">
                 <div class="card mb-4 clm2 box-shadow" data-aos="fade-up">
-                  <img
+                    <img
                     class="card-img-top"
                     data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
                     alt="Thumbnail [100%x225]"
@@ -88,12 +88,15 @@
                     src="https://image.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_107791-3863.jpg"
                     data-holder-rendered="true"
                   />
+                  
                   <div class="card-body">
                     <div class="contentWritten">
                       <div class="headingBlog">
-                        <h4 class="blogHeading">
-                        <%=  blogPosts[i].title.split(/\s+/).slice(0,10).join(" ") %>
-                        </h4>
+                        
+                          <h4 class="blogHeading">
+                            <%=  blogPosts[i].title.split(/\s+/).slice(0,10).join(" ") %>
+                            </h4>
+                
                       </div>
                       <div class="blogContent">
                         <p class="card-text">
@@ -105,12 +108,17 @@
                       class="d-flex justify-content-between align-items-center"
                     >
                       <div class="btn-group">
-                        <button
-                          type="button"
+                        <form action="/allblogs/blog" method="get" >
+                          <button
+                          type="submit"
                           class="btn btn-sm btn btn-outline-info"
                         >
                           Read More
                         </button>
+                          <input type="hidden" id="blogTitle" name="blogTitle" value="<%=blogPosts[i].title.split(/\s+/).join('+')%>"/>
+                        <input type="hidden" id="blogId" name="blogId" value="<%=blogPosts[i]._id%>" />
+                        </form>
+                        
                       </div>
                       <small class="text-muted">9 mins</small>
                     </div>
@@ -124,338 +132,7 @@
                 </div>
               </div>
            <% } %>
-           <!--
-              <div class="col-md-6 col-lg-4 clm col-sm-6">
-                <div class="card mb-4 clm2 box-shadow" data-aos="fade-up">
-                  <img
-                    class="card-img-top"
-                    data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                    alt="Thumbnail [100%x225]"
-                    src="https://image.freepik.com/free-vector/programmer-working-flat-style_52683-16624.jpg"
-                    data-holder-rendered="true"
-                    style="height: 225px; width: 100%; display: block"
-                  />
-                  <div class="card-body">
-                    <div class="contentWritten">
-                      <div class="headingBlog">
-                        <h4 class="blogHeading">
-                          Lorem, ipsum dolor sit amet Lorem consectetur.
-                        </h4>
-                      </div>
-                      <div class="blogContent">
-                        <p class="card-text">
-                          This is a wider card with supporting text are below as
-                          a natural lead-in to additional is a content. This
-                          content is a little bit longer.
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex justify-content-between align-items-center"
-                    >
-                      <div class="btn-group">
-                        <button
-                          type="button"
-                          class="btn btn-sm btn btn-outline-info"
-                        >
-                          Read More
-                        </button>
-                      </div>
-                      <small class="text-muted">9 mins</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4 clm col-sm-6">
-                <div class="card mb-4 clm2 box-shadow" data-aos="fade-up">
-                  <img
-                    class="card-img-top"
-                    data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                    alt="Thumbnail [100%x225]"
-                    src="https://image.freepik.com/free-vector/programmer-working-web-development-code-engineer-programming-python-php-java-script-computer_90220-251.jpg"
-                    data-holder-rendered="true"
-                    style="height: 225px; width: 100%; display: block"
-                  />
-                  <div class="card-body">
-                    <div class="contentWritten">
-                      <div class="headingBlog">
-                        <h4 class="blogHeading">
-                          Lorem, ipsum dolor sit amet Lorem consectetur.
-                        </h4>
-                      </div>
-                      <div class="blogContent">
-                        <p class="card-text">
-                          This is a wider card with supporting text are below as
-                          a natural lead-in to additional is a content. This
-                          content is a little bit longer.
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex justify-content-between align-items-center"
-                    >
-                      <div class="btn-group">
-                        <button
-                          type="button"
-                          class="btn btn-sm btn btn-outline-info"
-                        >
-                          Read More
-                        </button>
-                      </div>
-                      <small class="text-muted">9 mins</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4 clm col-sm-6">
-                <div class="card mb-4 clm2 box-shadow" data-aos="fade-up">
-                  <img
-                    class="card-img-top"
-                    data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                    alt="Thumbnail [100%x225]"
-                    src="https://image.freepik.com/free-vector/vector-banner-software-development_107791-3284.jpg"
-                    data-holder-rendered="true"
-                    style="height: 225px; width: 100%; display: block"
-                  />
-                  <div class="card-body">
-                    <div class="contentWritten">
-                      <div class="headingBlog">
-                        <h4 class="blogHeading">
-                          Lorem, ipsum dolor sit amet Lorem consectetur.
-                        </h4>
-                      </div>
-                      <div class="blogContent">
-                        <p class="card-text">
-                          This is a wider card with supporting text are below as
-                          a natural lead-in to additional is a content. This
-                          content is a little bit longer.
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex justify-content-between align-items-center"
-                    >
-                      <div class="btn-group">
-                        <button
-                          type="button"
-                          class="btn btn-sm btn btn-outline-info"
-                        >
-                          Read More
-                        </button>
-                      </div>
-                      <small class="text-muted">9 mins</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4 clm col-sm-6">
-                <div class="card mb-4 clm2 box-shadow" data-aos="fade-up">
-                  <img
-                    class="card-img-top"
-                    data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                    alt="Thumbnail [100%x225]"
-                    src="https://c0.wallpaperflare.com/preview/920/519/697/abstract-php-c-analytics.jpg"
-                    data-holder-rendered="true"
-                    style="height: 225px; width: 100%; display: block"
-                  />
-                  <div class="card-body">
-                    <div class="contentWritten">
-                      <div class="headingBlog">
-                        <h4 class="blogHeading">
-                          Lorem, ipsum dolor sit amet Lorem consectetur.
-                        </h4>
-                      </div>
-                      <div class="blogContent">
-                        <p class="card-text">
-                          This is a wider card with supporting text are below as
-                          a natural lead-in to additional is a content. This
-                          content is a little bit longer.
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex justify-content-between align-items-center"
-                    >
-                      <div class="btn-group">
-                        <button
-                          type="button"
-                          class="btn btn-sm btn btn-outline-info"
-                        >
-                          Read More
-                        </button>
-                      </div>
-                      <small class="text-muted">9 mins</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4 clm col-sm-6">
-                <div class="card mb-4 clm2 box-shadow" data-aos="fade-up">
-                  <img
-                    class="card-img-top"
-                    data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                    alt="Thumbnail [100%x225]"
-                    src="https://c0.wallpaperflare.com/preview/697/898/445/cloud-computing-illustration-technology.jpg"
-                    data-holder-rendered="true"
-                    style="height: 225px; width: 100%; display: block"
-                  />
-                  <div class="card-body">
-                    <div class="contentWritten">
-                      <div class="headingBlog">
-                        <h4 class="blogHeading">
-                          Lorem, ipsum dolor sit amet Lorem consectetur.
-                        </h4>
-                      </div>
-                      <div class="blogContent">
-                        <p class="card-text">
-                          This is a wider card with supporting text are below as
-                          a natural lead-in to additional is a content. This
-                          content is a little bit longer.
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex justify-content-between align-items-center"
-                    >
-                      <div class="btn-group">
-                        <button
-                          type="button"
-                          class="btn btn-sm btn btn-outline-info"
-                        >
-                          Read More
-                        </button>
-                      </div>
-                      <small class="text-muted">9 mins</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 col-lg-4 clm col-sm-6">
-                <div class="card mb-4 clm2 box-shadow" data-aos="fade-up">
-                  <img
-                    class="card-img-top"
-                    data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                    alt="Thumbnail [100%x225]"
-                    src="https://c4.wallpaperflare.com/wallpaper/176/864/869/computer-laptop-coffee-programming-wallpaper-preview.jpg"
-                    data-holder-rendered="true"
-                    style="height: 225px; width: 100%; display: block"
-                  />
-                  <div class="card-body">
-                    <div class="contentWritten">
-                      <div class="headingBlog">
-                        <h4 class="blogHeading">
-                          Lorem, ipsum dolor sit amet Lorem consectetur.
-                        </h4>
-                      </div>
-                      <div class="blogContent">
-                        <p class="card-text">
-                          This is a wider card with supporting text are below as
-                          a natural lead-in to additional is a content. This
-                          content is a little bit longer.
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex justify-content-between align-items-center"
-                    >
-                      <div class="btn-group">
-                        <button
-                          type="button"
-                          class="btn btn-sm btn btn-outline-info"
-                        >
-                          Read More
-                        </button>
-                      </div>
-                      <small class="text-muted">9 mins</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4 clm col-sm-6">
-                <div class="card mb-4 clm2 box-shadow" data-aos="fade-up">
-                  <img
-                    class="card-img-top"
-                    data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                    alt="Thumbnail [100%x225]"
-                    src="https://c4.wallpaperflare.com/wallpaper/42/94/569/programming-php-code-developer-wallpaper-preview.jpg"
-                    data-holder-rendered="true"
-                    style="height: 225px; width: 100%; display: block"
-                  />
-                  <div class="card-body">
-                    <div class="contentWritten">
-                      <div class="headingBlog">
-                        <h4 class="blogHeading">
-                          Lorem, ipsum dolor sit amet Lorem consectetur.
-                        </h4>
-                      </div>
-                      <div class="blogContent">
-                        <p class="card-text">
-                          This is a wider card with supporting text are below as
-                          a natural lead-in to additional is a content. This
-                          content is a little bit longer.
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex justify-content-between align-items-center"
-                    >
-                      <div class="btn-group">
-                        <button
-                          type="button"
-                          class="btn btn-sm btn btn-outline-info"
-                        >
-                          Read More
-                        </button>
-                      </div>
-                      <small class="text-muted">9 mins</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4 clm col-sm-6">
-                <div class="card mb-4 clm2 box-shadow" data-aos="fade-up">
-                  <img
-                    class="card-img-top"
-                    data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
-                    alt="Thumbnail [100%x225]"
-                    src="https://c1.wallpaperflare.com/preview/595/1003/783/code-coder-coding-computer.jpg"
-                    data-holder-rendered="true"
-                    style="height: 225px; width: 100%; display: block"
-                  />
-                  <div class="card-body">
-                    <div class="contentWritten">
-                      <div class="headingBlog">
-                        <h4 class="blogHeading">
-                          Lorem, ipsum dolor sit amet Lorem consectetur.
-                        </h4>
-                      </div>
-                      <div class="blogContent">
-                        <p class="card-text">
-                          This is a wider card with supporting text are below as
-                          a natural lead-in to additional is a content. This
-                          content is a little bit longer.
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      class="d-flex justify-content-between align-items-center"
-                    >
-                      <div class="btn-group">
-                        <button
-                          type="button"
-                          class="btn btn-sm btn btn-outline-info"
-                        >
-                          Read More
-                        </button>
-                      </div>
-                      <small class="text-muted">9 mins</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            -->
+           
             </div>
           </div>
         </div>

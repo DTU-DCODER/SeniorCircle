@@ -10,12 +10,12 @@ body {
   background-color: #000;
 }
 .top-container {
-  background-image: linear-gradient(360deg, #715594, rgba(110, 102, 102, 0.5)),
+  background-image: linear-gradient(360deg, #09040f, rgba(0, 0, 0, 0.5)),
     linear-gradient(
       140deg,
       #0c86ee,
       #6a59ff 22%,
-      rgba(206, 44, 149, 0.6) 38%,
+      rgba(239, 69, 179, 0.6) 38%,
       #03395d 57%,
       #142f5a 75%,
       #011c34
@@ -85,11 +85,11 @@ body {
   grid-gap: 1em;
   overflow-x: auto;
 }
-div.outer {
+.outer {
   position: relative;
   background-color: #ac7ffa;
   height: 400px;
-  width: 290px;
+  width: 250px;
   border-radius: 2em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -98,15 +98,11 @@ div.outer {
   width: 45%;
   border-radius: 2em 0 15em;
 }
-.outer h2.Name {
+.outer .Name {
   position: absolute;
   font-family: Roboto;
-
-  font-weight: 400;
-  top: 0.625em;
   left: 140px;
-  font-size: 1.5em;
-  right: inherit;
+  width: 50%;
 }
 .outer .social-icons {
   position: absolute;
@@ -116,42 +112,29 @@ div.outer {
   flex-direction: row;
   gap: 1em;
 }
-h3.status {
+.status {
   font-family: "Open Sans", sans-serif;
   font-style: italic;
   font-weight: 300;
   position: absolute;
   top: 85px;
-  font-size: 1.4em;
-  left: 140px;
+  left: 120px;
 }
-.social-icons .blog-btn {
-  margin-right: 1em;
+.social-icons button {
   background-color: #dc9ee3;
   border: 0;
   border-radius: 1em;
   /*   padding-right: 1em; */
   display: grid;
-  grid-template-columns: minmax(48px, 1fr) 2fr auto;
+  grid-template-columns: minmax(48px, 1fr) 2fr;
   grid-gap: 0.15em;
-  padding: 0.125em;
 }
-.social-icons .linkedin-btn {
-  object-fit: contain;
-  width: 30%;
-}
-.social-icons .blog-btn h2 {
+.social-icons button h2 {
   font-family: "Roboto";
-  font-size: 1.6em;
-}
-.social-icons .blog-btn img {
-  align-self: center;
 }
 .Info {
   position: absolute;
   font-size: 1.3125em;
-  padding-top: 1.3em;
-  padding-left: 1em;
   top: 155px;
   font-family: "Lato", sans-serif;
 }
@@ -169,7 +152,7 @@ h3.status {
   .top-container .top-wrapper {
     flex: 3;
   }
-  .top-container .linkedin-btn {
+  .top-container img {
     flex: 1;
   }
 }

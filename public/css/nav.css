@@ -19,3 +19,22 @@ nav.navbar-inverse {
 nav.navbar.transparent {
   background-color: rgba(0, 0, 0, 0);
 }
+
+
+
+.bodyy{
+  background-color: #63b4b8;
+}
+
+.ulCategories{
+  margin: auto;
+}
+
+#navbar{
+  font-size: 120%; font-weight: 500;
+}
+
+.logoImage{
+  width: 76.5px; height: 60.7px;
+}
+

@@ -12,6 +12,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const url = require("url");
 const LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const { format } = require("timeago.js");
 
 const app = express();
 app.use(express.static("public"));
@@ -33,7 +34,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect(process.env.DATABASE_LINK, { useNewUrlParser: true },
+mongoose.connect(process.env.DATABASE_LINK2, { useNewUrlParser: true },
   err => err ? console.log(err) : console.log('Connected to database'));
 
 const userSchema = new mongoose.Schema({
@@ -51,16 +52,20 @@ const userSchema = new mongoose.Schema({
   password: String,
   googleId: String,
   linkedinId: String,
-});const doubtSchema = new mongoose.Schema({
+},{ timestamps: true });
+
+const doubtSchema = new mongoose.Schema({
   author: String,
   question: String,
   answer: String,
-});
+},{ timestamps: true });
+
 const commentSchema = new mongoose.Schema({
   likes: Number,
   user_id: mongoose.Types.ObjectId,
   description: String,
-});
+},{ timestamps: true });
+
 const blogSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -73,7 +78,7 @@ const blogSchema = new mongoose.Schema({
   time: String,
   comment: commentSchema,
   author: String,
-});
+},{ timestamps: true });
 
 userSchema.plugin(passportLocalMongoose);
 userSchema.plugin(findOrCreate);
@@ -94,7 +99,8 @@ passport.deserializeUser(function (user, done) {
 passport.use(new GoogleStrategy({
   clientID: process.env.G_CLIENT_ID,
   clientSecret: process.env.G_CLIENT_SECRET,
-  callbackURL: "https://agile-castle-96458.herokuapp.com/auth/google/home",
+  // callbackURL: "https://agile-castle-96458.herokuapp.com/auth/google/home",
+  callbackURL: "http://localhost:3000/auth/google/home",
   userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
 },
   function (accessToken, refreshToken, profile, cb) {
@@ -109,13 +115,6 @@ passport.use(new GoogleStrategy({
       imageUrl: profilePictureUrl,
       email: profile.emails[0].value 
     }, function (err, user) { 
-    // userDetails = {
-    //   firstName: profile.name.givenName,
-    //   lastName: profile.name.familyName,
-    //   googleId: profile.id,
-    //   imageUrl: profilePictureUrl,
-    //   email: profile.emails[0].value
-    // };
       return cb(err, user);
     });
   }
@@ -124,7 +123,8 @@ passport.use(new GoogleStrategy({
 passport.use(new LinkedInStrategy({
   clientID: process.env.L_CLIENT_ID,
   clientSecret: process.env.L_CLIENT_SECRET,
-  callbackURL: "https://agile-castle-96458.herokuapp.com/auth/linkedin/home",
+  // callbackURL: "https://agile-castle-96458.herokuapp.com/auth/linkedin/home",
+  callbackURL: "http://localhost:3000/auth/linkedin/home",
   scope: ['r_emailaddress', 'r_liteprofile'],
   state: true
 }, function (accessToken, refreshToken, profile, done) {
@@ -133,7 +133,8 @@ passport.use(new LinkedInStrategy({
     if (profile.photos[3] === undefined)
     profilePictureUrl = undefined;
   else profilePictureUrl = profile.photos[3].value;
-    User.findOrCreate({ linkedinId: profile.id, 
+    User.findOrCreate(
+      { linkedinId: profile.id, 
           username: profile.id,
           firstName: profile.name.givenName,
           lastName: profile.name.familyName,
@@ -199,7 +200,7 @@ app.get("/", (req, res) => {
       else{
         currentUser = await User.findOne({username:req.user.username});
       } 
-      console.log( currentUser );
+      // console.log( currentUser );
       res.render("index", { signedIN: true, usrDetails: currentUser });
     })();
   }
@@ -230,22 +231,22 @@ app.post("/", (req, res) => {
     companyName: req.body.company,
     author:req.user.username,
   });
-  console.log(blog);
+  // console.log(blog);
   blog.save();
   res.redirect("/");
 });
 
 
 app.post("/register", (req, res) => {
-  let Users = new User({
+  let newUser = new User({
     email: req.body.username,
     username: req.body.username,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     // imageUrl: "../images/unkonwn.jpg"
   });
-  // userDetails = Users;
-  User.register(Users, req.body.password, function (err, user) {
+  // userDetails = newUser;
+  User.register(newUser, req.body.password, function (err, user) {
     if (err) {
       console.log(err);
       res.redirect("/register");
@@ -258,7 +259,7 @@ app.post("/register", (req, res) => {
 });
 
 app.post("/login", (req, res) => { 
-  console.log("1111")
+
   let user = new User({
     username: req.body.username,
     password: req.body.password
@@ -270,10 +271,11 @@ app.post("/login", (req, res) => {
     }
 
     else {
-      passport.authenticate("local")(req, res, () => {
+      console.log(req.isAuthenticated());
+      passport.authenticate("local")(req, res, (err) => { 
+        if(err) res.redirect("login");
         res.redirect("/home");
       });
-      res.redirect("/login");
     }
   });
 }); 
@@ -312,7 +314,7 @@ app.get("/company",(req,res)=>{
       Blog.find({companyName:"amazone"},(err,foundUsers)=>{
         if(err) console.log(err);
         else{ 
-          console.log(foundUsers);
+          // console.log(foundUsers);
           res.render("blog_page_new", { signedIN: true, usrDetails: currentUser, blogPosts: foundUsers });
         } });
     })();
@@ -320,6 +322,73 @@ app.get("/company",(req,res)=>{
   else res.redirect("/login");
   });
   
+
+
+app.get("/KnowYourAlum",async (req,res)=>{
+  let allAlums =await User.find({});
+// let currentUser = await User.findOne({username:req.user.username});
+if(req.isAuthenticated()){
+  (async ()=>{
+    if(req.user.provider==="linkedin")
+       currentUser = await User.findOne({username:req.user.id});
+    else if(req.user.provider==="google")
+       currentUser = await User.findOne({username:req.user.emails[0].value});
+    else{
+      currentUser = await User.findOne({username:req.user.username});
+    } 
+     console.log("current user : ", currentUser );
+    User.find({},(err,foundUsers)=>{
+      if(err) console.log(err);
+      else{ 
+        console.log("FOUND USERS : ",foundUsers);
+        res.render("knowurAlum", { signedIN: true, usrDetails: currentUser, allUsers: foundUsers });
+      } });
+  })();
+}
+else res.redirect("/login");
+})
+
+
+app.get("/allblogs/:blog",async (req,res)=>{
+var currentUser;
+var blogUser;
+  if(req.isAuthenticated()){
+    (async ()=>{
+      if(req.user.provider==="linkedin")
+         currentUser = await User.findOne({username:req.user.id});
+      else if(req.user.provider==="google")
+         currentUser = await User.findOne({username:req.user.emails[0].value});
+      else{
+        currentUser = await User.findOne({username:req.user.username});
+      } 
+      //  console.log("current user : ", currentUser );
+
+      // console.log("Request : ;;;;;;;;;;;;;;;");
+      // console.log(req.query);
+      let blogId = req.query.blogId ;
+      Blog.findOne({ _id : req.query.blogId},async (err, foundBlog)=>{
+        if(err) console.log(err);
+        else{ 
+          if(foundBlog.createdAt){
+            let timeago = format(foundBlog.createdAt);
+            foundBlog.time=timeago;
+          }
+          if(foundBlog.author){
+            blogUser = await User.findOne({username:foundBlog.author});
+          }
+         
+          console.log("blogUser : ",blogUser);
+          res.render("wider-blog", { signedIN: true, foundBlog: foundBlog, usrDetails: currentUser, blogUser: blogUser });
+        } });  
+  })();
+}
+  else res.redirect("/login");
+
+});
+
+
+
+
 
 
 

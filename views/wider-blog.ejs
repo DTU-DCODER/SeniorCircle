@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog look</title> 
+    <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/wider-blog.css"/>
+</head>
+<body>
+    <!-- style="background-color: white" -->
+ <div> 
+    <%-include('navbar',{signedIN:signedIN,
+        if(usrDetails){ 
+           usrDetails:usrDetails
+       }  })-%>
+ </div>
+ <div class="contentzz" >
+   <h1 class="headingzz">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo harum labore dolores aliquam aliquid, ipsam.</h1>   
+   <div  class="profilezz"> 
+   <div  class="profileDivzz"> 
+       <img class="profileImagezz" src="<%if(blogUser&&blogUser.imageUrl) {%>
+        <%= blogUser.imageUrl %>
+       <% } else { %>
+          ../images/unknown.jpg
+       <%}%>" alt="">
+    </div>
+    <p class="profileNamezz"><%=blogUser.firstName%> <%=blogUser.lastName%>, <%=foundBlog.date%> ◉ <%=foundBlog.time%></p>  
+    <div class="icons2Divzz">
+        <i class="fa fa-linkedin-square icons2zz" aria-hidden="true"></i>
+        <i class="fa fa-bookmark-o icons2zz" aria-hidden="true"></i>
+        <i class="fa fa-link icons2zz" aria-hidden="true"></i>
+    </div>
+    </div>
+
+     
+<div class="blogImageDivzz" >
+    <img class="blogImagezz" src="https://images.unsplash.com/photo-1574689049868-e94ed5301745?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="">
+</div>  
+
+<div class="blogContentzz">  
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum perferendis aspernatur quo, sunt unde ipsam cumque reprehenderit possimus reiciendis quasi ex sequi delectus. Minima repellat earum odit suscipit itaque. Sunt repudiandae assumenda dolor hic, laborum voluptate vitae ad repellendus, sequi, blanditiis sed quasi necessitatibus! Facere quia quidem vero magni! Pariatur sint quas placeat adipisci id corrupti ipsum autem. Rerum, praesentium dolorum recusandae quae consequuntur accusantium voluptas commodi nesciunt ad iure quas dolore! Distinctio rem ratione obcaecati quae aspernatur ab dicta sit laboriosam amet maxime necessitatibus soluta dolor quasi alias facere cum accusantium, sapiente consequatur quidem esse doloribus id officia. Id!</p> 
+<h2>Lorem, ipsum amet consectetur adipisicing dolor.</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum perferendis aspernatur quo, sunt unde ipsam cumque reprehenderit possimus reiciendis quasi ex sequi delectus. Minima repellat earum odit suscipit itaque. Sunt repudiandae assumenda dolor hic, laborum voluptate vitae ad repellendus, sequi, blanditiis sed quasi necessitatibus! Facere quia quidem vero magni! Pariatur sint quas placeat adipisci id corrupti ipsum autem. Rerum, praesentium dolorum recusandae quae consequuntur accusantium voluptas commodi nesciunt ad iure quas dolore! Distinctio rem ratione obcaecati quae aspernatur ab dicta sit laboriosam amet maxime necessitatibus soluta dolor quasi alias facere cum accusantium, sapiente consequatur quidem esse doloribus id officia. Id!</p> 
+<h2>Lorem, ipsum amet consectetur adipisicing dolor.</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum perferendis aspernatur quo, sunt unde ipsam cumque reprehenderit possimus reiciendis quasi ex sequi delectus. Minima repellat earum odit suscipit itaque. Sunt repudiandae assumenda dolor hic, laborum voluptate vitae ad repellendus, sequi, blanditiis sed quasi necessitatibus! Facere quia quidem vero magni! Pariatur sint quas placeat adipisci id corrupti ipsum autem. Rerum, praesentium dolorum recusandae quae consequuntur accusantium voluptas commodi nesciunt ad iure quas dolore! Distinctio rem ratione obcaecati quae aspernatur ab dicta sit laboriosam amet maxime necessitatibus soluta dolor quasi alias facere cum accusantium, sapiente consequatur quidem esse doloribus id officia Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente iste animi ut. Provident perferendis nihil repellat porro sunt hic rerum minus soluta esse saepe, totam ratione est similique laboriosam? Cumque ratione, expedita ad adipisci illo atque voluptates laboriosam porro at, veritatis eius totam temporibus optio. Harum porro totam veritatis velit Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit at maiores molestiae nobis non quis, labore aspernatur rerum officia maxime esse porro error provident. Repudiandae consequatur, delectus expedita quam temporibus quibusdam eveniet cupiditate mollitia. Libero ipsum at sunt accusamus, tenetur dolorem necessitatibus magni cum quaerat asperiores corrupti dolorum hic ab!</p>
+</div> 
+
+<div class="tagszz">
+    <li class="commonTagzz tag1zz">Amazon</li>
+    <li class="commonTagzz tag2zz">Web Development</li>
+    <li class="commonTagzz tag3zz">DTU</li>
+</div>
+
+<div class="commentDivzz"> 
+<i class="fa fa-thumbs-o-up iconszz" aria-hidden="true"> 233</i> 
+<i class="fa fa-comment-o iconszz" aria-hidden="true"> 12</i>
+<div class="commentBoxDivzz">
+<input class="commentBoxzz" type="text" placeholder="Comment...">
+<button class="commentBtnzz"><i class="fa fa-paper-plane fa-spin" aria-hidden="true"></i></button>
+</div> 
+</div>
+
+<div class="RAzz">
+    <h2 class="RAheadingzz">Related Articles</h2> 
+    <div class="RAexampleszz">ONE ROW OF ARTICLES</div>
+</div>
+</div>
+
+<div>
+    <%-include("footer")-%>
+</div>
+</body>
+</html>
